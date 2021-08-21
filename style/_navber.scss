@@ -1,0 +1,103 @@
+nav {
+    display: flex;
+    height: 60px;
+    width: 100%;
+    background: #5e9398de;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 100px;
+    flex-wrap: wrap;
+    box-shadow: 0px -3px 10px;
+    z-index: 999;
+    .logo {
+        width: 120px;
+        height: 60px;
+    }
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        margin: 0;
+        li {
+            margin: 0 5px;
+            a {
+                color: #f2f2f2;
+                text-decoration: none;
+                font-size: 18px;
+                font-weight: 600;
+                padding-left: 1rem;
+                border-radius: 5px;
+                letter-spacing: 1px;
+                transition: all 0.3s ease;
+                &:hover {
+                    color: #e6774d;
+                }
+            }
+        }
+    }
+    .menu-btn i {
+        color: #fff;
+        font-size: 22px;
+        cursor: pointer;
+        display: none;
+    }
+    input[type="checkbox"] {
+        display: none;
+    }
+    #switch {
+        display: none;
+    }
+}
+
+@media (max-width: 920px) {
+    nav {
+        padding: 0 65px;
+        #switch {
+            display: block;
+        }
+        .menu-btn {
+            i {
+                display: block;
+            }
+        }
+        ol,
+        ul {
+            padding-left: 0;
+        }
+        ul {
+            position: fixed;
+            top: 60px;
+            left: -100%;
+            background: #111;
+            height: 100vh;
+            width: 100%;
+            text-align: center;
+            display: block;
+            transition: all 0.3s ease;
+            li {
+                width: 100%;
+                margin: 40px 0;
+            }
+        }
+    }
+    #click:checked~.menu-btn i:before {
+        content: "\f00d";
+    }
+    #click:checked~ul {
+        left: 0;
+    }
+    #click:checked~ul li a {
+        margin-left: 0px;
+    }
+    nav ul li a {
+        width: 100%;
+        margin-left: -100%;
+        display: block;
+        font-size: 20px;
+        transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        &:hover {
+            background: none;
+            color: #e6774d;
+        }
+    }
+}

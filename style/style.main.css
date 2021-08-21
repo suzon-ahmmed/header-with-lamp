@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,900;1,900&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +7,210 @@
 }
 
 body {
-  background-color: #2c2c2c;
+  background-color: #000;
+  font-family: 'Roboto', sans-serif;
   color: white;
+  overflow-x: hidden;
+}
+
+header .hero .hero_left, header .hero .hero_right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#switch {
+  width: 60px;
+  height: 30px;
+  background-color: #efefef;
+  border-radius: 20px;
+  border: 0;
+  outline: 0;
+}
+
+#switch span {
+  display: block;
+  width: 26px;
+  height: 26px;
+  margin-left: 2px;
+  border-radius: 50%;
+  background-color: #999;
+}
+
+.active1 {
+  background: #e6774d;
+}
+
+header {
+  width: 100%;
+  height: 100vh;
+}
+
+header nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 60px;
+  width: 100%;
+  background: #5e9398de;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 100px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-shadow: 0px -3px 10px;
+          box-shadow: 0px -3px 10px;
+  z-index: 999;
+}
+
+header nav .logo {
+  width: 120px;
+  height: 60px;
+}
+
+header nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+}
+
+header nav ul li {
+  margin: 0 5px;
+}
+
+header nav ul li a {
+  color: #f2f2f2;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+  padding-left: 1rem;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+header nav ul li a:hover {
+  color: #e6774d;
+}
+
+header nav .menu-btn i {
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  display: none;
+}
+
+header nav input[type="checkbox"] {
+  display: none;
+}
+
+header nav #switch {
+  display: none;
+}
+
+@media (max-width: 920px) {
+  header nav {
+    padding: 0 65px;
+  }
+  header nav #switch {
+    display: block;
+  }
+  header nav .menu-btn i {
+    display: block;
+  }
+  header nav ol,
+  header nav ul {
+    padding-left: 0;
+  }
+  header nav ul {
+    position: fixed;
+    top: 60px;
+    left: -100%;
+    background: #111;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    display: block;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+  header nav ul li {
+    width: 100%;
+    margin: 40px 0;
+  }
+  header #click:checked ~ .menu-btn i:before {
+    content: "\f00d";
+  }
+  header #click:checked ~ ul {
+    left: 0;
+  }
+  header #click:checked ~ ul li a {
+    margin-left: 0px;
+  }
+  header nav ul li a {
+    width: 100%;
+    margin-left: -100%;
+    display: block;
+    font-size: 20px;
+    -webkit-transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  header nav ul li a:hover {
+    background: none;
+    color: #e6774d;
+  }
+}
+
+header .hero .hero_left .lamp {
+  width: 160px;
+  height: 330px;
+}
+
+header .hero .hero_left .light {
+  width: 610px;
+  margin-right: 16px;
+  margin-top: -4px;
+}
+
+header .hero .hero_right {
+  -webkit-box-align: start !important;
+      -ms-flex-align: start !important;
+          align-items: start !important;
+  position: relative;
+}
+
+header .hero .hero_right video {
+  margin-bottom: 70px;
+}
+
+header .hero .hero_right .text {
+  position: absolute;
+  background: #000;
+  mix-blend-mode: multiply;
+}
+
+header .hero .hero_right .text h1 {
+  padding: 3rem 0;
+  font-size: 90px;
+  font-weight: 600;
 }
 /*# sourceMappingURL=style.main.css.map */

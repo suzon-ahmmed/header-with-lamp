@@ -5,13 +5,65 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
     <link rel="stylesheet" href="./style/style.main.css">
     <title>Magic Light</title>
 </head>
 
 <body>
-    <h1>Trial</h1>
+    <header>
+        <nav>
+            <a href=""><img class="logo" src="./images/sapng.png" alt=""></a>
 
+            <button id="switch" class="" type="button"><span></span></button>
+
+            <input type="checkbox" id="click">
+            <label for="click" class="menu-btn">
+              <i class="fas fa-bars"></i>
+            </label>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">Contact</a></li>
+
+            </ul>
+        </nav>
+        <section class="hero container">
+            <div class="row">
+                <div class="col-lg-6 hero_left">
+                    <img class="lamp" src="./images/lamp.png" alt="">
+                    <img class="light" src="./images/light.png" alt="">
+                </div>
+                <div class="col-lg-6 hero_right">
+                    <video autoplay loop muted>
+                        <source src="./images/video4.mp4">
+                    </video>
+                    <div class="text">
+                        <h1>Latest in lighting.</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos aliquam molestias obcaecati, distinctio quo fuga itaque. Consectetur possimus mollitia ipsa?</p>
+                        <button type="button" onclick="toggolbtn()" id="switch"><span></span></button>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </section>
+    </header>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        var btn = document.getElementById("switch");
+
+        function toggolbtn() {
+            btn.classList.toggle(".active1")
+        }
+    </script>
 </body>
 
 </html>

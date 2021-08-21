@@ -1,10 +1,79 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    background-color: rgb(44, 44, 44);
-    color: white;
-}
+ @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,900;1,900&display=swap');
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }
+ 
+ body {
+     background-color: #000;
+     font-family: 'Roboto', sans-serif;
+     color: white;
+     overflow-x: hidden;
+ }
+ 
+ %center {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+ }
+ 
+ #switch {
+     width: 60px;
+     height: 30px;
+     background-color: #efefef;
+     border-radius: 20px;
+     border: 0;
+     outline: 0;
+     span {
+         display: block;
+         width: 26px;
+         height: 26px;
+         margin-left: 2px;
+         border-radius: 50%;
+         background-color: #999;
+     }
+ }
+ 
+ .active1 {
+     background: #e6774d;
+ }
+ 
+ header {
+     @import "navber";
+     width: 100%;
+     height: 100vh;
+     .hero {
+         .hero_left {
+             @extend %center;
+             .lamp {
+                 width: 160px;
+                 height: 330px;
+             }
+             .light {
+                 width: 610px;
+                 margin-right: 16px;
+                 margin-top: -4px;
+             }
+         }
+         .hero_right {
+             @extend %center;
+             align-items: start!important;
+             position: relative;
+             video {
+                 margin-bottom: 70px;
+             }
+             .text {
+                 position: absolute;
+                 background: #000;
+                 mix-blend-mode: multiply;
+                 h1 {
+                     padding: 3rem 0;
+                     font-size: 90px;
+                     font-weight: 600;
+                 }
+             }
+         }
+     }
+ }
