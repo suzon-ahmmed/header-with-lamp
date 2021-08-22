@@ -44,17 +44,11 @@ nav {
     input[type="checkbox"] {
         display: none;
     }
-    #switch {
-        display: none;
-    }
 }
 
-@media (max-width: 920px) {
+@media (max-width: 991px) {
     nav {
         padding: 0 65px;
-        #switch {
-            display: block;
-        }
         .menu-btn {
             i {
                 display: block;
@@ -74,6 +68,7 @@ nav {
             text-align: center;
             display: block;
             transition: all 0.3s ease;
+            z-index: 999;
             li {
                 width: 100%;
                 margin: 40px 0;

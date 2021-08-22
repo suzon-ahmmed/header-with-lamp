@@ -1,6 +1,13 @@
-// var btn = document.getElementById("switch");
+document.addEventListener("contextmenu", function(inspect) {
+    inspect.preventDefault();
+})
 
-// function toggolbtn() {
-//     btn.classList.toggle(".active")
+var lamp_switch = document.getElementById("switch");
+var lamp_light = document.getElementById("light");
 
-// }
+
+function toggolbtn() {
+    lamp_switch.classList.toggle("btn_on");
+    lamp_light.classList.toggle("light_on")
+
+}

@@ -19,6 +19,18 @@
      flex-direction: column;
  }
  
+ .btn_on {
+     background: #e6774d!important;
+     span {
+         background: #ffffff!important;
+         margin-left: 31px!important;
+     }
+ }
+ 
+ .light_on {
+     opacity: 1!important;
+ }
+ 
  #switch {
      width: 60px;
      height: 30px;
@@ -26,7 +38,11 @@
      border-radius: 20px;
      border: 0;
      outline: 0;
+     cursor: poynter;
+     margin-left: 12px;
+     transition: background 0.5s;
      span {
+         transition: background 0.5s, margin-left 0.5s;
          display: block;
          width: 26px;
          height: 26px;
@@ -34,10 +50,6 @@
          border-radius: 50%;
          background-color: #999;
      }
- }
- 
- .active1 {
-     background: #e6774d;
  }
  
  header {
@@ -55,6 +67,7 @@
                  width: 610px;
                  margin-right: 16px;
                  margin-top: -4px;
+                 opacity: 0;
              }
          }
          .hero_right {
@@ -62,18 +75,32 @@
              align-items: start!important;
              position: relative;
              video {
-                 margin-bottom: 70px;
+                 width: 80%;
+                 margin-bottom: 145px;
              }
              .text {
                  position: absolute;
                  background: #000;
                  mix-blend-mode: multiply;
+                 padding-right: 2rem;
                  h1 {
                      padding: 3rem 0;
                      font-size: 90px;
                      font-weight: 600;
                  }
+                 p {
+                     padding-bottom: 2rem;
+                 }
+                 a {
+                     text-decoration: none;
+                     color: white;
+                     background: #e97d53;
+                     padding: 12px;
+                     border-radius: 30px;
+                 }
              }
          }
      }
  }
+ 
+ @import "media";
