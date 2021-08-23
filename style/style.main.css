@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,900;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;800&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -8,7 +9,8 @@
 
 body {
   background-color: #000;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
   color: white;
   overflow-x: hidden;
 }
@@ -30,12 +32,16 @@ header .hero .hero_left, header .hero .hero_right {
 }
 
 .btn_on {
-  background: #e6774d !important;
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(50%, #4babe2), to(#ec2b7b)) !important;
+  background: linear-gradient(to bottom right, #4babe2 50%, #ec2b7b) !important;
 }
 
 .btn_on span {
   background: #ffffff !important;
   margin-left: 31px !important;
+  background-image: url("../images/sunny.svg") !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
 }
 
 .light_on {
@@ -45,7 +51,7 @@ header .hero .hero_left, header .hero .hero_right {
 #switch {
   width: 60px;
   height: 30px;
-  background-color: #efefef;
+  background-color: #2b2b2b;
   border-radius: 20px;
   border: 0;
   outline: 0;
@@ -63,7 +69,10 @@ header .hero .hero_left, header .hero .hero_right {
   height: 26px;
   margin-left: 2px;
   border-radius: 50%;
-  background-color: #999;
+  background-image: url("../images/moon.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #f8f9fa;
 }
 
 header {
@@ -77,115 +86,30 @@ header nav {
   display: flex;
   height: 60px;
   width: 100%;
-  background: #5e9398de;
+  background: #fff;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 0 100px;
+  padding: 0 85px;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-shadow: 0px -3px 10px;
-          box-shadow: 0px -3px 10px;
+  -webkit-box-shadow: 0 5px 10px #0009800a, 0 7px 18px #0009800d;
+          box-shadow: 0 5px 10px #0009800a, 0 7px 18px #0009800d;
   z-index: 999;
 }
 
 header nav .logo {
-  width: 120px;
-  height: 60px;
+  width: 110px;
+  height: 55px;
+  padding: 7px;
 }
 
-header nav ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  list-style: none;
-  margin: 0;
-}
-
-header nav ul li {
-  margin: 0 5px;
-}
-
-header nav ul li a {
-  color: #f2f2f2;
-  text-decoration: none;
-  font-size: 18px;
-  font-weight: 600;
-  padding-left: 1rem;
-  border-radius: 5px;
-  letter-spacing: 1px;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-
-header nav ul li a:hover {
-  color: #e6774d;
-}
-
-header nav .menu-btn i {
-  color: #fff;
-  font-size: 22px;
-  cursor: pointer;
-  display: none;
-}
-
-header nav input[type="checkbox"] {
-  display: none;
-}
-
-@media (max-width: 991px) {
+@media (max-width: 530px) {
   header nav {
-    padding: 0 65px;
-  }
-  header nav .menu-btn i {
-    display: block;
-  }
-  header nav ol,
-  header nav ul {
-    padding-left: 0;
-  }
-  header nav ul {
-    position: fixed;
-    top: 60px;
-    left: -100%;
-    background: #111;
-    height: 100vh;
-    width: 100%;
-    text-align: center;
-    display: block;
-    -webkit-transition: all 0.3s ease;
-    transition: all 0.3s ease;
-    z-index: 999;
-  }
-  header nav ul li {
-    width: 100%;
-    margin: 40px 0;
-  }
-  header #click:checked ~ .menu-btn i:before {
-    content: "\f00d";
-  }
-  header #click:checked ~ ul {
-    left: 0;
-  }
-  header #click:checked ~ ul li a {
-    margin-left: 0px;
-  }
-  header nav ul li a {
-    width: 100%;
-    margin-left: -100%;
-    display: block;
-    font-size: 20px;
-    -webkit-transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  }
-  header nav ul li a:hover {
-    background: none;
-    color: #e6774d;
+    padding: 0 35px;
   }
 }
 
@@ -223,7 +147,7 @@ header .hero .hero_right .text {
 header .hero .hero_right .text h1 {
   padding: 3rem 0;
   font-size: 90px;
-  font-weight: 600;
+  font-weight: 800;
 }
 
 header .hero .hero_right .text p {
@@ -233,13 +157,21 @@ header .hero .hero_right .text p {
 header .hero .hero_right .text a {
   text-decoration: none;
   color: white;
-  background: #e97d53;
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(50%, #4babe2), to(#ec2b7b));
+  background: linear-gradient(to bottom right, #4babe2 50%, #ec2b7b);
   padding: 12px;
   border-radius: 30px;
 }
 
+@media (max-width: 1199px) {
+  header .hero .hero_right video {
+    width: 90% !important;
+  }
+}
+
 @media (max-width: 991px) {
   header .hero .hero_right video {
+    width: 80% !important;
     margin-bottom: 160px;
     margin-left: 100px;
   }
@@ -253,7 +185,7 @@ header .hero .hero_right .text a {
 @media (max-width: 768px) {
   header .hero .hero_right video {
     margin-bottom: 200px;
-    margin-left: 80px;
+    margin-left: 65px;
   }
 }
 
@@ -269,24 +201,24 @@ header .hero .hero_right .text a {
   }
   header .hero .hero_right video {
     margin-bottom: 200px;
-    margin-left: 80px;
+    margin-left: 65px;
   }
 }
 
 @media (max-width: 530px) {
   header .hero .hero_left .lamp {
-    width: 110px;
-    height: 240px;
+    width: 95px;
+    height: 210px;
   }
   header .hero .hero_left .light {
-    width: 410px;
+    width: 375px;
     margin-right: 13px;
     margin-top: -2px;
   }
   header .hero .hero_right video {
-    width: 100%;
+    width: 97% !important;
     margin-bottom: 225px;
-    margin-left: 0px;
+    margin-left: 5px;
   }
   header .hero .hero_right .text {
     padding-right: 0.6rem;
