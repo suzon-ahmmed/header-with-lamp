@@ -1,0 +1,256 @@
+.hero {
+   height: 520px;
+   width: 100vw;
+   background: url("../img/hero-flight-3.jpg");
+   // background-position: center;
+   background-size: cover;
+   background-repeat: no-repeat;
+   .top-nav {
+      margin-bottom: -30px;
+      overflow: hidden;
+      padding: 0px 30px;
+      margin-top: 100px;
+      z-index: 2;
+      .nav-link {
+         border-radius: 0;
+         margin: 0 25px;
+         div {
+            display: flex;
+            align-items: center;
+            padding: 12px 0;
+            img {
+               width: 32px;
+               height: 32px;
+            }
+            p {
+               font-size: 17px;
+               font-weight: 600;
+               margin-left: 10px;
+               color: #3a4856;
+            }
+         }
+      }
+      .active {
+         background-color: #fff;
+         border-bottom: 2px solid $secondary-light;
+      }
+   }
+   .search-field {
+      padding: 50px 25px 25px;
+      width: 80vw;
+      z-index: 1;
+      .data-field {
+         border: 1px solid #8080805e;
+         border-radius: 4px;
+         // overflow: hidden;
+         position: relative;
+         height: 85px;
+         width: 100%;
+         label {
+            padding-left: 18px;
+            position: absolute;
+            top: 10px;
+         }
+         input {
+            width: 100%;
+            height: 100%;
+            border: none;
+            outline: none;
+            padding-top: 2px;
+            padding-left: 18px;
+            font-size: 1.25rem;
+            font-weight: 600;
+            background: transparent;
+         }
+         .sub-details {
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            position: absolute;
+            bottom: 8px;
+            left: 18px;
+            z-index: 1;
+            width: 90%;
+         }
+         .select2-container {
+            vertical-align: middle;
+            height: 80px !important;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 2;
+         }
+         .select2-container--default {
+            .select2-selection--single {
+               margin-bottom: 0;
+               height: 100%;
+
+               .select2-selection__rendered {
+                  color: $primary;
+                  padding-left: 18px;
+                  height: 100%;
+                  display: flex;
+                  align-items: center;
+                  cursor: pointer;
+                  font-weight: 600;
+                  height: 80px !important;
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  width: 100%;
+                  font-size: 1.25rem;
+               }
+               .select2-selection__arrow {
+                  display: none;
+               }
+            }
+            .select2-dropdown {
+               margin-top: 50px !important;
+            }
+         }
+         .form-control:focus {
+            border: none;
+            box-shadow: none;
+         }
+      }
+      div.data-field:focus-within {
+         border: 1px solid $secondary-light;
+         box-shadow: 0 0 0 0.15rem rgba(164, 243, 164, 0.363);
+      }
+   }
+   .select-tab {
+      .nav {
+         box-shadow: 0 1px 6px rgba(0, 0, 0, 0.17);
+         border-radius: 24px;
+         position: relative;
+         overflow: hidden;
+         .nav-link {
+            border-radius: 0;
+            color: #3a4856;
+            font-weight: 600;
+         }
+         .active {
+            background-color: rgb(164, 243, 164);
+         }
+      }
+   }
+}
+
+@media only screen and (max-width: 991.98px) {
+   .hero {
+      height: 720px;
+      .top-nav {
+         .nav-link {
+            div {
+               flex-direction: column;
+               img {
+                  width: 26px;
+                  height: 26px;
+               }
+               p {
+                  font-size: 15px;
+                  margin-left: 0px;
+                  padding-top: 12px;
+               }
+            }
+         }
+      }
+
+      .select-tab {
+         justify-content: center;
+      }
+   }
+}
+
+@media only screen and (max-width: 768.98px) {
+   .hero {
+      .top-nav {
+         padding: 0px 0px;
+         z-index: 2;
+         .nav-link {
+            margin: 0 0px;
+            padding-bottom: 0;
+            div {
+               padding: 6px 0;
+               img {
+                  width: 24px;
+                  height: 24px;
+               }
+               p {
+                  font-size: 15px;
+               }
+            }
+         }
+      }
+      .search-field {
+         padding: 50px 25px 25px;
+         width: 80vw;
+         z-index: 1;
+         .data-field {
+            border: 1px solid #8080805e;
+            border-radius: 4px;
+            position: relative;
+            height: 60px;
+            width: 100%;
+            label {
+               padding-left: 18px;
+               position: absolute;
+               top: 2px;
+            }
+            input {
+               padding-top: 2px;
+               padding-left: 18px;
+               font-size: 1rem;
+            }
+            .sub-details {
+               bottom: 0px;
+            }
+            .select2-container {
+               height: 60px !important;
+            }
+            .select2-container--default {
+               .select2-selection--single {
+                  .select2-selection__rendered {
+                     height: 60px !important;
+                     font-size: 1rem;
+                  }
+               }
+            }
+         }
+      }
+   }
+}
+@media only screen and (max-width: 574.98px) {
+   .hero {
+      .top-nav {
+         .nav-link {
+            padding: 8px 8px 4px;
+            div {
+               padding: 0px 0;
+               img {
+                  width: 24px;
+                  height: 24px;
+               }
+               p {
+                  padding-top: 8px;
+                  font-size: 15px;
+               }
+            }
+         }
+      }
+      .search-field {
+         padding: 50px 12px 12px;
+         width: 86vw;
+      }
+      .select-tab {
+         .nav {
+            .nav-link {
+               font-size: 15px;
+               padding: 8px 10px;
+            }
+         }
+      }
+   }
+}

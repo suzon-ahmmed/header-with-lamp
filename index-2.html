@@ -21,10 +21,6 @@
         integrity="sha512-nMNlpuaDPrqlEls3IX/Q56H36qvBASwb3ipuo3MxeWbsQB1881ox0cRv7UPTgBlriqoynt35KjEwgGUeUXIPnw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./assets/css/flag-icon.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/air-datepicker/2.2.3/css/datepicker.min.css"
-        integrity="sha512-Ujn3LMQ8mHWqy7EPP32eqGKBhBU8v39JRIfCer4nTZqlsSZIwy5g3Wz9SaZrd6pp3vmjI34yyzguZ2KQ66CLSQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 
     <!-- jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
@@ -54,6 +50,7 @@
                                 <div class="language-currency-widget shadow-p">
                                     <div class="row g-2">
                                         <div class="col-12 service">
+
                                             <select id="country">
                                                 <option value="0" data-imagesrc="./assets/flags/4x3/us.svg"
                                                     data-description="">USA</option>
@@ -90,7 +87,7 @@
                                             </div>
                                         </div>
                                         <div class="d-grid">
-                                            <button type="button" class="btn btn-base btn-sm m-0"> Apply </button>
+                                            <button type="button" class="btn btn-primary btn-sm m-0"> Apply </button>
                                         </div>
                                     </div>
                                 </div>
@@ -181,7 +178,7 @@
                                             </div>
                                         </div>
                                         <div class="d-grid">
-                                            <button type="button" class="btn btn-base btn-sm m-0"> Apply </button>
+                                            <button type="button" class="btn btn-primary btn-sm m-0"> Apply </button>
                                         </div>
                                     </div>
                                 </div>
@@ -245,358 +242,175 @@
 
     <main>
         <section class="hero">
-            <div class="container ">
-                <div class="d-flex flex-column justify-content-center align-items-center">
-                    <ul class="d-flex justify-content-center bg-white rounded shadow-sm top-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="javascript:;">
-                                <div>
-                                    <img src="./assets/img/svg-icon/hire-guide.svg" alt="">
-                                    <p>Hire Guide</p>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="javascript:;">
-                                <div>
-                                    <img src="./assets/img/svg-icon/holiday.svg" alt="">
-                                    <p>Holidays</p>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="javascript:;">
-                                <div>
-                                    <img src="./assets/img/svg-icon/visa.svg" alt="">
-                                    <p>Visa</p>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="javascript:;">
-                                <div>
-                                    <img src="./assets/img/flight.svg" alt="">
-                                    <p>Flight</p>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
-                    <div class="bg-white rounded search-field">
-                        <div class="d-flex mb-3 select-tab">
-                            <ul class="nav nav-pills" role="tablist">
+            <div class="container height-full">
+                <div class="d-flex justify-content-center align-items-center height-full">
+                    <div class="mx-3">
+                        <div class="d-flex justify-content-center ">
+                            <ul class="nav nav-pills justify-content-center bg-white rounded shadow-sm top-nav" id="top-nav-tab"
+                                role="tablist">
                                 <li class="nav-item" role="presentation">
-                                    <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#one-way"
-                                        type="button" role="tab" aria-controls="pills-home" aria-selected="true">One
-                                        Way</button>
+                                    <button class="nav-link active" id="pills-contact-tab" data-bs-toggle="pill"
+                                        data-bs-target="#service-guide" type="button" role="tab"
+                                        aria-controls="pills-contact" aria-selected="false">
+                                        <div>
+                                            <img src="./assets/img/svg-icon/hire-guide.svg" alt="">
+                                            <p>Hire Guide</p>
+                                        </div>
+                                    </button>
                                 </li>
                                 <li class="nav-item" role="presentation">
-                                    <button class="nav-link" data-bs-toggle="pill" data-bs-target="#return-way"
-                                        type="button" role="tab" aria-controls="pills-profile"
-                                        aria-selected="false">Return Way</button>
+                                    <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
+                                        data-bs-target="#service-holiday" type="button" role="tab"
+                                        aria-controls="pills-profile" aria-selected="false">
+                                        <div>
+                                            <img src="./assets/img/svg-icon/holiday.svg" alt="">
+                                            <p>Holidays</p>
+                                        </div>
+                                    </button>
                                 </li>
                                 <li class="nav-item" role="presentation">
-                                    <button class="nav-link" data-bs-toggle="pill" data-bs-target="#multi-city"
-                                        type="button" role="tab" aria-controls="pills-contact"
-                                        aria-selected="false">Multi City</button>
+                                    <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
+                                        data-bs-target="#service-visa" type="button" role="tab"
+                                        aria-controls="pills-contact" aria-selected="false">
+                                        <div>
+                                            <img src="./assets/img/svg-icon/visa.svg" alt="">
+                                            <p>Visa</p>
+                                        </div>
+                                    </button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="pills-home-tab" data-bs-toggle="pill"
+                                        data-bs-target="#service-flight" type="button" role="tab"
+                                        aria-controls="pills-home" aria-selected="true">
+                                        <div>
+                                            <img src="./assets/img/flight.svg" alt="">
+                                            <p>Flight</p>
+                                        </div>
+                                    </button>
                                 </li>
                             </ul>
                         </div>
-                        <div class="tab-content">
-                            <div class="tab-pane fade show active" id="one-way" role="tabpanel"
-                                aria-labelledby="one-way">
+                        <div class="tab-content bg-white rounded shadow primary-tab-content" id="primary-tab-content">
+                            <div class="tab-pane fade show active" id="service-guide" role="tabpanel"
+                                aria-labelledby="pills-home-tab">
                                 <form action="">
-                                    <div class="row g-2">
-                                        <div class="col-md-6 col-lg-3">
-                                            <div class="data-field">
-                                                <label for="" class="fs-14">From</label>
-                                                <select class="form-select select2">
-                                                    <option value="1">Dhaka</option>
-                                                    <option value="2">Rajshahi</option>
-                                                    <option value="3">Chittagong</option>
-                                                </select>
-                                                <div class="fs-14 sub-details">(DAC), Hazrat Shahjalal
-                                                    International
-                                                    Airport, Bangladesh</div>
-                                            </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            search field
                                         </div>
-                                        <div class="col-md-6 col-lg-3">
-                                            <div class="data-field">
-                                                <label for="" class="fs-14">To</label>
-                                                <select class="form-select select2">
-                                                    <option value="1">Dhaka</option>
-                                                    <option value="2">Rajshahi</option>
-                                                    <option value="3">Chittagong</option>
-                                                </select>
-                                                <div class="fs-14 sub-details">(DAC), Hazrat Shahjalal
-                                                    International
-                                                    Airport, Bangladesh</div>
-                                            </div>
+                                        <div class="col-md-3">
+                                            depart or return on
                                         </div>
-                                        <div class="col-lg-3">
-                                            <div class="data-field">
-                                                <label for="" class="fs-14">Select Date</label>
-                                                <input type="text" placeholder="2022-01-14" class="date" />
-                                                <div class="fs-14 sub-details">2022, Jan</div>
-                                            </div>
+                                        <div class="col-md-3">
+                                            person & cabin class
                                         </div>
-                                        <div class="col-lg-3">
-                                            <div class="data-field">
-                                                <label for="" class="fs-14">Passengers & Cabin Class</label>
-                                                <input type="button" class="text-start" data-bs-toggle="modal"
-                                                    data-bs-target="#exampleModal" value="1 Person">
-
-                                                <div class="fs-14 sub-details">Business Class</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex justify-content-center mt-3">
-                                        <button class="btn btn-base btn-lg px-5" type="submit">Search</button>
                                     </div>
                                 </form>
                             </div>
-
-                            <div class="tab-pane fade" id="return-way" role="tabpanel"
+                            <div class="tab-pane fade" id="service-holiday" role="tabpanel"
                                 aria-labelledby="pills-profile-tab">
                                 <form action="">
-                                    <div class="row g-2">
-                                        <div class="col-md-6 col-lg-3">
-                                            <div class="data-field">
-                                                <label for="" class="fs-14">From</label>
-                                                <select class="form-select select2">
-                                                    <option value="1">Dhaka</option>
-                                                    <option value="2">Rajshahi</option>
-                                                    <option value="3">Chittagong</option>
-                                                </select>
-                                                <div class="fs-14 sub-details">(DAC), Hazrat Shahjalal
-                                                    International
-                                                    Airport, Bangladesh</div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6 col-lg-3">
-                                            <div class="data-field">
-                                                <label for="" class="fs-14">To</label>
-                                                <select class="form-select select2">
-                                                    <option value="1">Dhaka</option>
-                                                    <option value="2">Rajshahi</option>
-                                                    <option value="3">Chittagong</option>
-                                                </select>
-                                                <div class="fs-14 sub-details">(DAC), Hazrat Shahjalal
-                                                    International
-                                                    Airport, Bangladesh</div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4">
-                                            <div class="row g-2">
-                                                <div class="col-6">
-                                                    <div class="data-field">
-                                                        <label for="" class="fs-14">Depart On</label>
-                                                        <input type="text" class="date" />
-                                                        <div class="fs-14 sub-details">2022, Jan</div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-6">
-                                                    <div class="data-field">
-                                                        <label for="" class="fs-14">Return On</label>
-                                                        <input type="text" class="date" />
-                                                        <div class="fs-14 sub-details">2022, Jan</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-2">
-                                            <div class="data-field">
-                                                <label for="" class="fs-14">Passengers & Class</label>
-                                                <input type="button" class="text-start" data-bs-toggle="modal"
-                                                    data-bs-target="#exampleModal" value="1 Person">
 
-                                                <div class="fs-14 sub-details">Business Class</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex justify-content-center mt-3">
-                                        <button class="btn btn-success btn-lg px-5" type="submit">Search</button>
-                                    </div>
                                 </form>
                             </div>
-                            <div class="tab-pane fade" id="multi-city" role="tabpanel"
+                            <div class="tab-pane fade" id="service-visa" role="tabpanel"
                                 aria-labelledby="pills-contact-tab">
                                 <form action="">
-                                    <div class="row g-2">
-                                        <div class="col-md-6 col-lg-3">
-                                            <div class="data-field">
-                                                <label for="" class="fs-14">From</label>
-                                                <select class="form-select select2">
-                                                    <option value="1">Dhaka</option>
-                                                    <option value="2">Rajshahi</option>
-                                                    <option value="3">Chittagong</option>
-                                                </select>
-                                                <div class="fs-14 sub-details">(DAC), Hazrat Shahjalal
-                                                    International
-                                                    Airport, Bangladesh</div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6 col-lg-3">
-                                            <div class="data-field">
-                                                <label for="" class="fs-14">To</label>
-                                                <select class="form-select select2">
-                                                    <option value="1">Dhaka</option>
-                                                    <option value="2">Rajshahi</option>
-                                                    <option value="3">Chittagong</option>
-                                                </select>
-                                                <div class="fs-14 sub-details">(DAC), Hazrat Shahjalal
-                                                    International
-                                                    Airport, Bangladesh</div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3">
-                                            <div class="data-field">
-                                                <label for="" class="fs-14">Select Date</label>
-                                                <input type="text" class="date"  />
-                                                <div class="fs-14 sub-details">2022, Jan</div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3">
-                                            <div class="data-field">
-                                                <label for="" class="fs-14">Passengers & Cabin Class</label>
-                                                <input type="button" class="text-start" data-bs-toggle="modal"
-                                                    data-bs-target="#exampleModal" value="1 Person">
-                                                <div class="fs-14 sub-details">Business Class</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row g-2 mt-1">
-                                        <div class="col-md-6 col-lg-3">
-                                            <div class="data-field">
-                                                <label for="" class="fs-14">From</label>
-                                                <select class="form-select select2">
-                                                    <option value="1">Dhaka</option>
-                                                    <option value="2">Rajshahi</option>
-                                                    <option value="3">Chittagong</option>
-                                                </select>
-                                                <div class="fs-14 sub-details">(DAC), Hazrat Shahjalal
-                                                    International
-                                                    Airport, Bangladesh</div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6 col-lg-3">
-                                            <div class="data-field">
-                                                <label for="" class="fs-14">To</label>
-                                                <select class="form-select select2">
-                                                    <option value="1">Dhaka</option>
-                                                    <option value="2">Rajshahi</option>
-                                                    <option value="3">Chittagong</option>
-                                                </select>
-                                                <div class="fs-14 sub-details">(DAC), Hazrat Shahjalal
-                                                    International
-                                                    Airport, Bangladesh</div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3">
-                                            <div class="data-field">
-                                                <label for="" class="fs-14">Select Date</label>
-                                                <input type="text" class="date" />
-                                                <div class="fs-14 sub-details">2022, Jan</div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3">
-                                            <div class="d-flex align-items-center height-full">
-                                                <button class="btn btn-outline-success"><i class="fas fa-plus"></i> Add
-                                                    City</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex justify-content-center mt-3">
-                                        <button class="btn btn-success btn-lg px-5" type="submit">Search</button>
-                                    </div>
+
                                 </form>
+                            </div>
+                            <div class="tab-pane fade" id="service-flight" role="tabpanel"
+                                aria-labelledby="pills-contact-tab">
+
+                                <div class="d-flex justify-content-end mb-2">
+                                    <ul class="nav nav-pills select-tab" role="tablist">
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link active" data-bs-toggle="pill"
+                                                data-bs-target="#one-way" type="button" role="tab"
+                                                aria-controls="pills-home" aria-selected="true">One Way</button>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link" data-bs-toggle="pill" data-bs-target="#return-way"
+                                                type="button" role="tab" aria-controls="pills-profile"
+                                                aria-selected="false">Return Way</button>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link" data-bs-toggle="pill" data-bs-target="#multi-city"
+                                                type="button" role="tab" aria-controls="pills-contact"
+                                                aria-selected="false">Multi City</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="tab-content secondary-tab-content" id="secondary-tab-content">
+                                    <div class="tab-pane fade show active" id="one-way" role="tabpanel"
+                                        aria-labelledby="one-way">
+                                        <form action="">
+                                            <div class="row">
+                                                <div class="col-lg-6">
+                                                    <div class="row g-0">
+                                                        <div class="col-sm-6">
+                                                            <label for="">label</label>
+                                                            <select class="form-select select2 otpinput"
+                                                                aria-label="Default select example">
+                                                                <option selected>Open this select menu</option>
+                                                                <option value="1">One</option>
+                                                                <option value="2">Two</option>
+                                                                <option value="3">Three</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <label for="">label</label>
+                                                            <select class="form-select select2 otpinput"
+                                                                aria-label="Default select example">
+                                                                <option selected>Open this select menu</option>
+                                                                <option value="1">One</option>
+                                                                <option value="2">Two</option>
+                                                                <option value="3">Three</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    depart or return on
+                                                    <select class="form-select select2 otpinput"
+                                                        aria-label="Default select example">
+                                                        <option selected>Open this select menu</option>
+                                                        <option value="1">One</option>
+                                                        <option value="2">Two</option>
+                                                        <option value="3">Three</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    person & cabin class
+                                                    <select class="form-select select2 otpinput"
+                                                        aria-label="Default select example">
+                                                        <option selected>Open this select menu</option>
+                                                        <option value="1">One</option>
+                                                        <option value="2">Two</option>
+                                                        <option value="3">Three</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex justify-content-center mt-3">
+                                                <button class="btn btn-success" type="submit">Search</button>
+                                            </div>
+                                        </form>
+
+                                    </div>
+                                    <div class="tab-pane fade" id="return-way" role="tabpanel"
+                                        aria-labelledby="pills-profile-tab">return-way</div>
+                                    <div class="tab-pane fade" id="multi-city" role="tabpanel"
+                                        aria-labelledby="pills-contact-tab">multi-city</div>
+                                </div>
+
+
+
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
         </section>
     </main>
-
-
-
-
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <form action="">
-                    <div class="modal-body">
-                        <p class="fs-16 fw-500 pb-2">Passengers</p>
-                        <div class="d-flex justify-content-between align-items-center mb-2">
-                            <div>
-                                <p class="fs-16">Adult</p>
-                                <p class="fs-12 text-muted">12+ Yrs</p>
-                            </div>
-                            <div>
-                                <button type="button" class="btn btn-sm border"> + </button>
-                                <span class="fs-16 px-2">1</span>
-                                <button type="button" class="btn btn-sm border"> + </button>
-                            </div>
-                        </div>
-                        <div class="d-flex justify-content-between align-items-center mb-2">
-                            <div>
-                                <p class="fs-16">Children</p>
-                                <p class="fs-12 text-muted">2 - Less then 12 Yrs</p>
-                            </div>
-                            <div>
-                                <button type="button" class="btn btn-sm border"> + </button>
-                                <span class="fs-16 px-2">0</span>
-                                <button type="button" class="btn btn-sm border"> + </button>
-                            </div>
-                        </div>
-                        <div class="d-flex justify-content-between align-items-center mb-2">
-                            <div>
-                                <p class="fs-16">Infant</p>
-                                <p class="fs-12 text-muted">Less then 2 Yrs</p>
-                            </div>
-                            <div>
-                                <button type="button" class="btn btn-sm border"> + </button>
-                                <span class="fs-16 px-2">0</span>
-                                <button type="button" class="btn btn-sm border"> + </button>
-                            </div>
-                        </div>
-                        <hr>
-                        <div>
-                            <p class="fs-16 fw-500 pb-2">Cabin Class</p>
-                            <div class="d-flex justify-content-around">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                        id="flexRadioDefault11" checked>
-                                    <label class="form-check-label" for="flexRadioDefault11">
-                                        Economy
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                        id="flexRadioDefault12">
-                                    <label class="form-check-label" for="flexRadioDefault12">
-                                        Business
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                        id="flexRadioDefault13">
-                                    <label class="form-check-label" for="flexRadioDefault13">
-                                        First Class
-                                    </label>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="modal-footer border-0">
-                        <button type="button" class="btn btn-success" data-bs-dismiss="modal">Done</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
 
     <footer>
         <div class="footer">
@@ -787,17 +601,20 @@
         crossorigin=" anonymous" referrerpolicy="no-referrer"></script>
     <script type="text/javascript" src="https://cdn.rawgit.com/prashantchaudhary/ddslick/master/jquery.ddslick.min.js">
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/air-datepicker/2.2.3/js/datepicker.min.js"
-        integrity="sha512-sM9DpZQXHGs+rFjJYXE1OcuCviEgaXoQIvgsH7nejZB64A09lKeTU4nrs/K6YxFs6f+9FF2awNeJTkaLuplBhg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <!-- Custom JS -->
     <script src="./assets/js/app.js"></script>
     <script>
-        var fp = flatpickr(".date", {
-            minDate: "today",
-            dateFormat: "Y-m-d",
-        })
+        //First will select all inputfield
+        // var myopt = document.querySelectorAll(".otpinput");
+        // //will check in console first.
+        // for (var i = 0; i < myopt.length - 1; i++) {
+        //     myopt[i].addEventListener("change", function () {
+        //         this.nextElementSibling.focus();
+        //     })
+        // }
+        // $('select').on('change', function () {
+        //     alert(this.value);
+        // });
     </script>
 
 </body>
